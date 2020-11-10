@@ -56,13 +56,3 @@ C:\stuff\verifyCont3\verifyCont\obj\Debug\verifyCont.csproj.GenerateResource.cac
 C:\stuff\verifyCont3\verifyCont\obj\Debug\verifyCont.csproj.CoreCompileInputs.cache
 C:\stuff\verifyCont3\verifyCont\obj\Debug\verifyCont.exe
 C:\stuff\verifyCont3\verifyCont\obj\Debug\verifyCont.pdb
-D:\stuff\misc\verifyCont3\verifyCont\bin\Debug\verifyCont.exe.config
-D:\stuff\misc\verifyCont3\verifyCont\bin\Debug\verifyCont.exe
-D:\stuff\misc\verifyCont3\verifyCont\bin\Debug\verifyCont.pdb
-D:\stuff\misc\verifyCont3\verifyCont\obj\Debug\verifyCont.csprojAssemblyReference.cache
-D:\stuff\misc\verifyCont3\verifyCont\obj\Debug\verifyCont.Form1.resources
-D:\stuff\misc\verifyCont3\verifyCont\obj\Debug\verifyCont.Properties.Resources.resources
-D:\stuff\misc\verifyCont3\verifyCont\obj\Debug\verifyCont.csproj.GenerateResource.cache
-D:\stuff\misc\verifyCont3\verifyCont\obj\Debug\verifyCont.csproj.CoreCompileInputs.cache
-D:\stuff\misc\verifyCont3\verifyCont\obj\Debug\verifyCont.exe
-D:\stuff\misc\verifyCont3\verifyCont\obj\Debug\verifyCont.pdb
